@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-6">Bota por el que te Gusta</h1>
+    <div class="row">
+
+        @{
+            foreach (var tiendas in ViewBag.Tiendas)
+            {
+                <form method="post" asp-action="Index">
+                    <div class="card" style="width: 18rem;">
+                        <img src="@tiendas.Imagen" class="card-img-top" alt="...">
+                        <input type="number" hidden name="IdTienda" value="@tiendas.IdTienda" />
+                        <div class="card-body">
+                            <h5 class="card-title">@tiendas.NombreTienda</h5>
+                            <p class="card-text">@tiendas.Descripcion</p>
+                            <button type="submit" class="fas fa-hand-point-up btn btn-sm btn-outline-info" title="Puntuar">Puntuar</button>
+                        </div>
+                    </div>
+                </form>
+            }
+        }
+    </div>
+</div>

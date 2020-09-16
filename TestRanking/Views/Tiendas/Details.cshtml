@@ -1,0 +1,46 @@
+﻿@model TestRanking.Data.TblTiendas
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+    <div class="card">
+        <div class="card-header">
+            Control de Tiendas
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Detalles Tienda</h5>
+            <div class="alert alert-primary">PUNTOS: @ViewBag.Puntos de @ViewBag.NPuntos</div>
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.NombreTienda)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.NombreTienda)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Descripcion)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Descripcion)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Logo)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Logo)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Imagen)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Imagen)
+                </dd>
+            </dl>
+        </div>
+        <div>
+            <a asp-action="Edit" asp-route-id="@Model.IdTienda" class="btn btn-warning">Modificar</a> |
+            <a asp-action="Index" class="btn btn-info">Atras</a>
+        </div>
+    </div>
+
