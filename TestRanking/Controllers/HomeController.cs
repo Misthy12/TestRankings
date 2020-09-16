@@ -34,6 +34,7 @@ namespace TestRanking.Controllers
             TblPuntos votos = new TblPuntos();
             votos.Puntos++;
             votos.Total += votos.Puntos;
+            votos.IdTienda = IdTienda;
             _context.Add(votos);
             await _context.SaveChangesAsync();
              ViewBag.Puntos = await _context.TblPuntos.ToListAsync();
